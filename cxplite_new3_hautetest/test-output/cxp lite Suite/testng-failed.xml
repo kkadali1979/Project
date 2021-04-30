@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [cxp lite Suite]">
+  <listeners>
+    <listener class-name="com.qa.cxplite.testnglisteneres.TestngListeners"/>
+  </listeners>
+  <test name="Test(failed)">
+    <parameter name="catererID" value="ridgewellscat"/>
+    <parameter name="password" value="$uper20#CAT"/>
+    <parameter name="browserName" value="chrome"/>
+    <parameter name="userName" value="superadmin"/>
+    <classes>
+      <class name="com.qa.cxplite.tests.cxpCreateCustomerTest">
+        <methods>
+          <include name="initialization"/>
+          <include name="validateCreateCustomer" invocation-numbers="0"/>
+          <include name="validatecreatecustomer"/>
+        </methods>
+      </class> <!-- com.qa.cxplite.tests.cxpCreateCustomerTest -->
+      <class name="com.qa.cxplite.tests.CreateEventTest">
+        <methods>
+          <include name="validateeventpage"/>
+          <include name="initialization"/>
+          <include name="validateCreateEvent" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.qa.cxplite.tests.CreateEventTest -->
+      <class name="com.qa.cxplite.tests.CreateEstimateTest">
+        <methods>
+          <include name="validateCreateEstimates" invocation-numbers="0"/>
+          <include name="initialization"/>
+          <include name="CreateEstimates"/>
+        </methods>
+      </class> <!-- com.qa.cxplite.tests.CreateEstimateTest -->
+      <class name="com.qa.cxplite.tests.CreateEventOrderTest">
+        <methods>
+          <include name="initialization"/>
+          <include name="add_menu" invocation-numbers="0"/>
+          <include name="eventordersetup"/>
+          <include name="eventnumberSearch" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.qa.cxplite.tests.CreateEventOrderTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [cxp lite Suite] -->

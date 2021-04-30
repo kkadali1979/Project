@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [CXPLite Application Test Suite]">
+  <parameter name="catererID" value="menuslitedev"/>
+  <parameter name="password" value="FreshStart19#"/>
+  <parameter name="browserName" value="chrome"/>
+  <parameter name="userName" value="superadmin"/>
+  <listeners>
+    <listener class-name="com.qa.cxplite.testnglisteneres.TestngListeners"/>
+    <listener class-name="com.qa.cxplite.testnglisteneres.TestngListeners"/>
+  </listeners>
+  <test name="Regression Test">
+    <parameter name="catererID" value="menuslitedev"/>
+    <parameter name="password" value="FreshStart19#"/>
+    <parameter name="browserName" value="chrome"/>
+    <parameter name="userName" value="superadmin"/>
+    <classes>
+      <class name="com.qa.cxplite.tests.TestBase1"/>
+      <class name="com.qa.cxplite.tests.cxpLoginTest"/>
+      <class name="com.qa.cxplite.tests.ValidateHomePageTest"/>
+      <class name="com.qa.cxplite.tests.cxpCreateCustomerTest"/>
+      <class name="com.qa.cxplite.tests.CreateEventTest"/>
+    </classes>
+  </test> <!-- Regression Test -->
+  <test name="Regression Test(failed)">
+    <parameter name="catererID" value="menuslitedev"/>
+    <parameter name="password" value="FreshStart19#"/>
+    <parameter name="browserName" value="chrome"/>
+    <parameter name="userName" value="superadmin"/>
+    <classes>
+      <class name="com.qa.cxplite.tests.TestBase1">
+        <methods>
+          <include name="initialization"/>
+        </methods>
+      </class> <!-- com.qa.cxplite.tests.TestBase1 -->
+      <class name="com.qa.cxplite.tests.CreateEventTest">
+        <methods>
+          <include name="validateCreateEvent" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.qa.cxplite.tests.CreateEventTest -->
+    </classes>
+  </test> <!-- Regression Test(failed) -->
+</suite> <!-- Failed suite [CXPLite Application Test Suite] -->

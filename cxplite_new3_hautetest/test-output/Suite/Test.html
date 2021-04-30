@@ -1,0 +1,124 @@
+<html>
+<head>
+<title>TestNG:  Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>9/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Sep 06 11:48:12 IST 2019</td>
+</tr>
+<tr><td>Total time:</td><td>216 seconds (216906 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.qa.cxplite.tests.CreateEventOrderTest.add_menu()'><b>add_menu</b><br>Test class: com.qa.cxplite.tests.CreateEventOrderTest<br>Parameters: 10.0, 11.0, 12.0, 13.0, 14.0, 15.0</td>
+<td></td>
+<td>111</td>
+<td>com.qa.cxplite.tests.CreateEventOrderTest@edf4efb</td></tr>
+<tr>
+<td title='com.qa.cxplite.tests.CreateEventOrderTest.eventnumberSearch()'><b>eventnumberSearch</b><br>Test class: com.qa.cxplite.tests.CreateEventOrderTest<br>Parameters: 76211</td>
+<td></td>
+<td>12</td>
+<td>com.qa.cxplite.tests.CreateEventOrderTest@edf4efb</td></tr>
+<tr>
+<td title='com.qa.cxplite.tests.CreateEventTest.serachEventTest()'><b>serachEventTest</b><br>Test class: com.qa.cxplite.tests.CreateEventTest<br>Parameters: 76211</td>
+<td></td>
+<td>2</td>
+<td>com.qa.cxplite.tests.CreateEventTest@35f983a6</td></tr>
+<tr>
+<td title='com.qa.cxplite.tests.logout.teardown()'><b>teardown</b><br>Test class: com.qa.cxplite.tests.logout</td>
+<td></td>
+<td>0</td>
+<td>com.qa.cxplite.tests.logout@2f7a2457</td></tr>
+<tr>
+<td title='com.qa.cxplite.tests.cxpCreateCustomerTest.validateCreateCustomer()'><b>validateCreateCustomer</b><br>Test class: com.qa.cxplite.tests.cxpCreateCustomerTest<br>Parameters: New Customer-111333, Event Planner, Customer_F, Credit Card, Default, Site, Building – 45, james, 300#, Washington, District of Columbia, 20004, 08812-228279, 9987620907, test@gmail.com, Comments, Directions, Test Bill Contact, Acc – 12134, Cadima, Christine, Con_F, Con_L</td>
+<td></td>
+<td>22</td>
+<td>com.qa.cxplite.tests.cxpCreateCustomerTest@60f82f98</td></tr>
+<tr>
+<td title='com.qa.cxplite.tests.CreateEstimateTest.validateCreateEstimates()'><b>validateCreateEstimates</b><br>Test class: com.qa.cxplite.tests.CreateEstimateTest<br>Parameters: 11, 12, 13, 14, 15, 16</td>
+<td></td>
+<td>6</td>
+<td>com.qa.cxplite.tests.CreateEstimateTest@7f690630</td></tr>
+<tr>
+<td title='com.qa.cxplite.tests.CreateEventTest.validateCreateEvent()'><b>validateCreateEvent</b><br>Test class: com.qa.cxplite.tests.CreateEventTest<br>Parameters: New Customer-111333, Cadima, Christine, 08/2/2019, 2:15 AM, 08/2/2019, 10:15 PM, Drop Off Lunch, Definite, Buffet Dinner, Back To School , Default, White China, 2.0, Not Applicable, 1.23456789E8, abc@abc.com</td>
+<td></td>
+<td>45</td>
+<td>com.qa.cxplite.tests.CreateEventTest@35f983a6</td></tr>
+<tr>
+<td title='com.qa.cxplite.tests.ValidateHomePageTest.validatehomepage()'><b>validatehomepage</b><br>Test class: com.qa.cxplite.tests.ValidateHomePageTest</td>
+<td></td>
+<td>4</td>
+<td>com.qa.cxplite.tests.ValidateHomePageTest@6442b0a6</td></tr>
+<tr>
+<td title='com.qa.cxplite.tests.cxpLoginTest.validatelogin()'><b>validatelogin</b><br>Test class: com.qa.cxplite.tests.cxpLoginTest<br>Parameters: menuslitedev, superadmin, FreshStart19#</td>
+<td></td>
+<td>6</td>
+<td>com.qa.cxplite.tests.cxpLoginTest@4411d970</td></tr>
+</table><p>
+</body>
+</html>

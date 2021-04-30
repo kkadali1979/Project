@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="catererID" value="menuslitedev"/>
+  <parameter name="password" value="FreshStart19#"/>
+  <parameter name="browserName" value="chrome"/>
+  <parameter name="userName" value="superadmin"/>
+  <test name="Test">
+    <parameter name="catererID" value="menuslitedev"/>
+    <parameter name="password" value="FreshStart19#"/>
+    <parameter name="browserName" value="chrome"/>
+    <parameter name="userName" value="superadmin"/>
+    <classes>
+      <class name="com.qa.cxplite.tests.TestBase1"/>
+      <class name="com.qa.cxplite.tests.cxpLoginTest"/>
+      <class name="com.qa.cxplite.tests.ValidateHomePageTest"/>
+      <class name="com.qa.cxplite.tests.cxpCreateCustomerTest"/>
+      <class name="com.qa.cxplite.tests.CreateEventTest"/>
+      <class name="com.qa.cxplite.tests.CreateEstimateTest"/>
+      <class name="com.qa.cxplite.tests.CreateEventOrderTest"/>
+      <class name="com.qa.cxplite.tests.logout"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Failed suite [Suite] -->

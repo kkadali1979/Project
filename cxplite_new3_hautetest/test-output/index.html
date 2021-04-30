@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 5 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-cxp_lite_Suite">
+              <span class="suite-name border-failed">cxp lite Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-cxp_lite_Suite">
+                    <span>C:\cxplite_new3_hautetest\cxplite_new3_hautetest\testng1.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-cxp_lite_Suite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-cxp_lite_Suite">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-cxp_lite_Suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-cxp_lite_Suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-cxp_lite_Suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-cxp_lite_Suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">10 methods, 5 failed,   5 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-cxp_lite_Suite" class="hide-methods failed suite-cxp_lite_Suite"> (hide)</a> <!-- hide-methods failed suite-cxp_lite_Suite -->
+                      <a href="#" panel-name="suite-cxp_lite_Suite" class="show-methods failed suite-cxp_lite_Suite"> (show)</a> <!-- show-methods failed suite-cxp_lite_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-cxp_lite_Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-cxp_lite_Suite" title="com.qa.cxplite.tests.CreateEventOrderTest" hash-for-method="add_menu(10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0)">add_menu(10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-cxp_lite_Suite" title="com.qa.cxplite.tests.CreateEventOrderTest" hash-for-method="eventnumberSearch(830698)">eventnumberSearch(830698)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-cxp_lite_Suite" title="com.qa.cxplite.tests.cxpCreateCustomerTest" hash-for-method="validateCreateCustomer(cutomer0003, Government, Customer_F, Credit Card, Holiday, Friend, Building – 45, james, 300#, Washi...)">validateCreateCustomer(cutomer0003, Government, Customer_F, Credit Card, Holiday, Friend, Building – 45, james, 300#, Washi...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-cxp_lite_Suite" title="com.qa.cxplite.tests.CreateEstimateTest" hash-for-method="validateCreateEstimates(11, 12, 13, 14, 15, 16, 17.0, 18.0)">validateCreateEstimates(11, 12, 13, 14, 15, 16, 17.0, 18.0)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-cxp_lite_Suite" title="com.qa.cxplite.tests.CreateEventTest" hash-for-method="validateCreateEvent(cutomer0003, Freeman, Beena, 05/13/2021, 2:15 AM, 05/13/2021, 10:15 PM, Delivery, Definite, Buffet D...)">validateCreateEvent(cutomer0003, Freeman, Beena, 05/13/2021, 2:15 AM, 05/13/2021, 10:15 PM, Delivery, Definite, Buffet D...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-cxp_lite_Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-cxp_lite_Suite" class="hide-methods passed suite-cxp_lite_Suite"> (hide)</a> <!-- hide-methods passed suite-cxp_lite_Suite -->
+                      <a href="#" panel-name="suite-cxp_lite_Suite" class="show-methods passed suite-cxp_lite_Suite"> (show)</a> <!-- show-methods passed suite-cxp_lite_Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-cxp_lite_Suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-cxp_lite_Suite" title="com.qa.cxplite.tests.createbillservicetest" hash-for-method="bill_service">bill_service</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-cxp_lite_Suite" title="com.qa.cxplite.tests.cxplite_changerequestTest" hash-for-method="changerequest">changerequest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-cxp_lite_Suite" title="com.qa.cxplite.tests.CreateEventTest" hash-for-method="serachEventTest(830698)">serachEventTest(830698)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-cxp_lite_Suite" title="com.qa.cxplite.tests.ValidateHomePageTest" hash-for-method="validatehomepage">validatehomepage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-cxp_lite_Suite" title="com.qa.cxplite.tests.cxpLoginTest" hash-for-method="validatelogin(ridgewellscat, superadmin, $uper20#CAT)">validatelogin(ridgewellscat, superadmin, $uper20#CAT)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-cxp_lite_Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-cxp_lite_Suite" class="panel cxp_lite_Suite">
+          <div class="suite-cxp_lite_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.qa.cxplite.tests.cxpCreateCustomerTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateCreateCustomer(cutomer0003, Government, Customer_F, Credit Card, Holiday, Friend, Building – 45, james, 300#, Washi...)">
+                  </a> <!-- validateCreateCustomer(cutomer0003, Government, Customer_F, Credit Card, Holiday, Friend, Building – 45, james, 300#, Washi...) -->
+                  <span class="method-name">validateCreateCustomer</span>
+                  <span class="parameters">(cutomer0003, Government, Customer_F, Credit Card, Holiday, Friend, Building – 45, james, 300#, Washington, New York, 20004, 08812-228279, 9987620907, test@gmail.com, Comments, Directions, Test Bill Contact, Acc – 12134, Freeman, Beena, Con_F, Con_L)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.qa.cxplite.tests.cxpCreateCustomerTest.validateCreateCustomer(cxpCreateCustomerTest.java:36)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-cxp_lite_Suite-class-failed -->
+          <div class="suite-cxp_lite_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.qa.cxplite.tests.CreateEventTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateCreateEvent(cutomer0003, Freeman, Beena, 05/13/2021, 2:15 AM, 05/13/2021, 10:15 PM, Delivery, Definite, Buffet D...)">
+                  </a> <!-- validateCreateEvent(cutomer0003, Freeman, Beena, 05/13/2021, 2:15 AM, 05/13/2021, 10:15 PM, Delivery, Definite, Buffet D...) -->
+                  <span class="method-name">validateCreateEvent</span>
+                  <span class="parameters">(cutomer0003, Freeman, Beena, 05/13/2021, 2:15 AM, 05/13/2021, 10:15 PM, Delivery, Definite, Buffet Dinner, Corporate, Holiday, Disposables, 2.0, Not Applicable, 1.23456789E8, abc@abc.com)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.qa.cxplite.tests.CreateEventTest.validateCreateEvent(CreateEventTest.java:42)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-cxp_lite_Suite-class-failed -->
+          <div class="suite-cxp_lite_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.qa.cxplite.tests.CreateEventOrderTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="add_menu(10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0)">
+                  </a> <!-- add_menu(10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0) -->
+                  <span class="method-name">add_menu</span>
+                  <span class="parameters">(10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0)</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (ce15acd81b205a406d8da063d00f8dd1)] -&gt; xpath: //button[@id=&apos;btnAddClose&apos;]] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-I6TKHMQ&apos;, ip: &apos;192.168.1.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_281&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\kalyan kadali\AppD...}, goog:chromeOptions: {debuggerAddress: localhost:61717}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ce15acd81b205a406d8da063d00f8dd1
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.qa.cxplite.pages.CreateEventOrder.add_combo(CreateEventOrder.java:468)
+	at com.qa.cxplite.tests.CreateEventOrderTest.add_menu(CreateEventOrderTest.java:80)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="eventnumberSearch(830698)">
+                  </a> <!-- eventnumberSearch(830698) -->
+                  <span class="method-name">eventnumberSearch</span>
+                  <span class="parameters">(830698)</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=90.0.4430.93)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-I6TKHMQ&apos;, ip: &apos;192.168.1.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_281&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\kalyan kadali\AppD...}, goog:chromeOptions: {debuggerAddress: localhost:61717}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ce15acd81b205a406d8da063d00f8dd1
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy12.sendKeys(Unknown Source)
+	at com.qa.cxplite.tests.CreateEventOrderTest.eventnumberSearch(CreateEventOrderTest.java:51)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-cxp_lite_Suite-class-failed -->
+          <div class="suite-cxp_lite_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.qa.cxplite.tests.CreateEstimateTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateCreateEstimates(11, 12, 13, 14, 15, 16, 17.0, 18.0)">
+                  </a> <!-- validateCreateEstimates(11, 12, 13, 14, 15, 16, 17.0, 18.0) -->
+                  <span class="method-name">validateCreateEstimates</span>
+                  <span class="parameters">(11, 12, 13, 14, 15, 16, 17.0, 18.0)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.qa.cxplite.tests.CreateEstimateTest.validateCreateEstimates(CreateEstimateTest.java:41)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-cxp_lite_Suite-class-failed -->
+          <div class="suite-cxp_lite_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.qa.cxplite.tests.cxplite_changerequestTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="changerequest">
+                  </a> <!-- changerequest -->
+                  <span class="method-name">changerequest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-cxp_lite_Suite-class-passed -->
+          <div class="suite-cxp_lite_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.qa.cxplite.tests.CreateEventTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="serachEventTest(830698)">
+                  </a> <!-- serachEventTest(830698) -->
+                  <span class="method-name">serachEventTest</span>
+                  <span class="parameters">(830698)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-cxp_lite_Suite-class-passed -->
+          <div class="suite-cxp_lite_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.qa.cxplite.tests.createbillservicetest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="bill_service">
+                  </a> <!-- bill_service -->
+                  <span class="method-name">bill_service</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-cxp_lite_Suite-class-passed -->
+          <div class="suite-cxp_lite_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.qa.cxplite.tests.ValidateHomePageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="validatehomepage">
+                  </a> <!-- validatehomepage -->
+                  <span class="method-name">validatehomepage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-cxp_lite_Suite-class-passed -->
+          <div class="suite-cxp_lite_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.qa.cxplite.tests.cxpLoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="validatelogin(ridgewellscat, superadmin, $uper20#CAT)">
+                  </a> <!-- validatelogin(ridgewellscat, superadmin, $uper20#CAT) -->
+                  <span class="method-name">validatelogin</span>
+                  <span class="parameters">(ridgewellscat, superadmin, $uper20#CAT)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-cxp_lite_Suite-class-passed -->
+        </div> <!-- panel cxp_lite_Suite -->
+        <div panel-name="test-xml-cxp_lite_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\cxplite_new3_hautetest\cxplite_new3_hautetest\testng1.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;cxp lite Suite&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.qa.cxplite.testnglisteneres.TestngListeners&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test name=&quot;Test&quot;&gt;
+    &lt;parameter name=&quot;catererID&quot; value=&quot;ridgewellscat&quot;/&gt;
+    &lt;parameter name=&quot;password&quot; value=&quot;$uper20#CAT&quot;/&gt;
+    &lt;parameter name=&quot;browserName&quot; value=&quot;chrome&quot;/&gt;
+    &lt;parameter name=&quot;userName&quot; value=&quot;superadmin&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.qa.cxplite.utils.TestBase1&quot;/&gt;
+      &lt;class name=&quot;com.qa.cxplite.tests.cxpLoginTest&quot;/&gt;
+      &lt;class name=&quot;com.qa.cxplite.tests.ValidateHomePageTest&quot;/&gt;
+      &lt;class name=&quot;com.qa.cxplite.tests.cxpCreateCustomerTest&quot;/&gt;
+      &lt;class name=&quot;com.qa.cxplite.tests.CreateEventTest&quot;/&gt;
+      &lt;class name=&quot;com.qa.cxplite.tests.CreateEventOrderTest&quot;/&gt;
+      &lt;class name=&quot;com.qa.cxplite.tests.CreateEstimateTest&quot;/&gt;
+      &lt;class name=&quot;com.qa.cxplite.tests.cxplite_changerequestTest&quot;/&gt;
+      &lt;class name=&quot;com.qa.cxplite.tests.createbillservicetest&quot;/&gt;
+      &lt;class name=&quot;com.qa.cxplite.tests.logout&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Test --&gt;
+&lt;/suite&gt; &lt;!-- cxp lite Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-cxp_lite_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for cxp lite Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Test (10 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-cxp_lite_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for cxp lite Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-cxp_lite_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for cxp lite Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_cxp_lite_Suite');
+function tableData_cxp_lite_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(10);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'add_menu')
+data.setCell(0, 2, 'com.qa.cxplite.tests.CreateEventOrderTest')
+data.setCell(0, 3, 448091);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'validatelogin')
+data.setCell(1, 2, 'com.qa.cxplite.tests.cxpLoginTest')
+data.setCell(1, 3, 63581);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'validateCreateEstimates')
+data.setCell(2, 2, 'com.qa.cxplite.tests.CreateEstimateTest')
+data.setCell(2, 3, 55981);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'validateCreateEvent')
+data.setCell(3, 2, 'com.qa.cxplite.tests.CreateEventTest')
+data.setCell(3, 3, 50837);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'validateCreateCustomer')
+data.setCell(4, 2, 'com.qa.cxplite.tests.cxpCreateCustomerTest')
+data.setCell(4, 3, 50749);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'bill_service')
+data.setCell(5, 2, 'com.qa.cxplite.tests.createbillservicetest')
+data.setCell(5, 3, 48165);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'serachEventTest')
+data.setCell(6, 2, 'com.qa.cxplite.tests.CreateEventTest')
+data.setCell(6, 3, 24768);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'validatehomepage')
+data.setCell(7, 2, 'com.qa.cxplite.tests.ValidateHomePageTest')
+data.setCell(7, 3, 18805);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'eventnumberSearch')
+data.setCell(8, 2, 'com.qa.cxplite.tests.CreateEventOrderTest')
+data.setCell(8, 3, 12917);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'changerequest')
+data.setCell(9, 2, 'com.qa.cxplite.tests.cxplite_changerequestTest')
+data.setCell(9, 3, 2259);
+window.suiteTableData['cxp_lite_Suite']= { tableData: data, tableDiv: 'times-div-cxp_lite_Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 12 minutes</span>
+              <div id="times-div-cxp_lite_Suite">
+              </div> <!-- times-div-cxp_lite_Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-cxp_lite_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for cxp lite Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-cxp_lite_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">9 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.qa.cxplite.tests.cxpCreateCustomerTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">initialization</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.qa.cxplite.tests.cxplite_changerequestTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">initialization</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.qa.cxplite.tests.CreateEventTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">initialization</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.qa.cxplite.tests.createbillservicetest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">initialization</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.qa.cxplite.tests.ValidateHomePageTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">initialization</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.qa.cxplite.tests.logout</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">initialization</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.qa.cxplite.tests.cxpLoginTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">initialization</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.qa.cxplite.tests.CreateEventOrderTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">initialization</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.qa.cxplite.tests.CreateEstimateTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">initialization</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-cxp_lite_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.qa.cxplite.utils.TestBase1</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initialization(chrome)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.qa.cxplite.tests.createbillservicetest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">billservicesetup</span>
+                <span class="method-start">128617 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">bill_service</span>
+                <span class="method-start">129415 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.qa.cxplite.tests.cxpLoginTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">validatelogin(ridgewellscat, superadmin, $uper20#CAT)</span>
+                <span class="method-start">177993 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.qa.cxplite.tests.ValidateHomePageTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">validatehomepage</span>
+                <span class="method-start">241582 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.qa.cxplite.tests.cxpCreateCustomerTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">validatecreatecustomer</span>
+                <span class="method-start">260390 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">validateCreateCustomer(cutomer0003, Government, Customer_F, Credit Card, Holiday, Friend, Building – 45, james, 300#, Washi...)</span>
+                <span class="method-start">302430 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.qa.cxplite.tests.CreateEventTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">validateeventpage</span>
+                <span class="method-start">416076 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">validateCreateEvent(cutomer0003, Freeman, Beena, 05/13/2021, 2:15 AM, 05/13/2021, 10:15 PM, Delivery, Definite, Buffet D...)</span>
+                <span class="method-start">419971 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">serachEventTest(830698)</span>
+                <span class="method-start">478980 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.qa.cxplite.tests.CreateEstimateTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">CreateEstimates</span>
+                <span class="method-start">503751 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">validateCreateEstimates(11, 12, 13, 14, 15, 16, 17.0, 18.0)</span>
+                <span class="method-start">504840 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.qa.cxplite.tests.CreateEventOrderTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">eventordersetup</span>
+                <span class="method-start">620907 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">eventnumberSearch(830698)</span>
+                <span class="method-start">621605 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">add_menu(10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0)</span>
+                <span class="method-start">695137 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.qa.cxplite.tests.cxplite_changerequestTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">change_request</span>
+                <span class="method-start">1156961 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">changerequest</span>
+                <span class="method-start">1157673 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.qa.cxplite.tests.logout</div> <!-- chronological-class-name -->
+              <div class="configuration-test after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">1159986 ms</span>
+              </div> <!-- configuration-test after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

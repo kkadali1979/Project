@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.qa.cxplite.tests.CreateEventOrderTest">
+        <methods>
+          <include name="initialization"/>
+          <include name="add_menu"/>
+          <include name="eventordersetup"/>
+          <include name="eventnumberSearch"/>
+        </methods>
+      </class> <!-- com.qa.cxplite.tests.CreateEventOrderTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
