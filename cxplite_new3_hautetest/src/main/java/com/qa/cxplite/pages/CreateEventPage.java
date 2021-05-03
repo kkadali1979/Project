@@ -211,23 +211,28 @@ public class CreateEventPage   {
 
 			// new
 			// Select(createEventPageLocators.eventTheme).selectByVisibleText(eventTheme);
+			new Select(eventTheme).selectByVisibleText(EventTheme);
 			new Select(businessUnit).selectByVisibleText(BusinessUnit);
 
 			new Select(platterType).selectByVisibleText(PlatterType);
 
 			guestCount.sendKeys(GuestCount);
 			firstNext.click();
-
-			new Select(county).selectByVisibleText(County);
-			homePhone.sendKeys(Homephone);
-
-			email.clear();
-			email.sendKeys(Email);
-Thread.sleep(2000);
 			secondnext.click();
-			Thread.sleep(2000);
 			createEvent.click();
+			
+
+//			new Select(county).selectByVisibleText(County);
+//			homePhone.sendKeys(Homephone);
+//
+//			email.clear();
+//			email.sendKeys(Email);
+//            Thread.sleep(2000);
+//			secondnext.click();
+//			Thread.sleep(2000);
+//			createEvent.click();
 			Thread.sleep(2000);
+			
 			String eventDetails = eventNuber.getText();
 
 			result = eventNuber.isDisplayed();

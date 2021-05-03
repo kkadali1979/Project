@@ -171,7 +171,7 @@ public class cxpCreateCustomerPage {
 			BillContact.sendKeys(billContact);
 			AccountingId.sendKeys(accountingId);
 			CreateButton_customer.click();
-			Thread.sleep(7000);
+			Thread.sleep(2000);
 
 			new Select(ContactAE).selectByVisibleText(contactAE);
 			

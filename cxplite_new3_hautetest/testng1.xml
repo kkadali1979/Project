@@ -18,14 +18,9 @@
 			<class name="com.qa.cxplite.tests.cxpLoginTest"></class>
 			<class name="com.qa.cxplite.tests.ValidateHomePageTest"></class>
 			<class name="com.qa.cxplite.tests.cxpCreateCustomerTest"></class>
-		 	<class name="com.qa.cxplite.tests.CreateEventTest"></class>
-			<class name="com.qa.cxplite.tests.CreateEventOrderTest"></class>
-			<class name="com.qa.cxplite.tests.CreateEstimateTest"></class>		
-			<class name="com.qa.cxplite.tests.cxplite_changerequestTest"></class>			
-			<class name="com.qa.cxplite.tests.createbillservicetest"></class> 	
-					
+			<class name="com.qa.cxplite.tests.CreateEventTest"></class>
+		 	
 			
-			 <class name="com.qa.cxplite.tests.logout"></class> 
 		</classes>
 	</test>
 
