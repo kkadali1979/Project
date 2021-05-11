@@ -182,7 +182,7 @@ public class cxpCreateCustomerPage {
 			CreateButton_conatct.click();
 			Thread.sleep(2000);
 		
-			Thread.sleep(5000);
+//			Thread.sleep(5000);
 			result = EditContact.isDisplayed();
 		
 			CloseButton.click();

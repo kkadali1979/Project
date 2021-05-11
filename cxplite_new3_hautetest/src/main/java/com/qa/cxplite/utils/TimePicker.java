@@ -30,13 +30,13 @@ public class TimePicker extends TestBase1 {
 				int hours_application = Integer.parseInt(cell.getText());
 				if (hours_application == hours) {
 					cell.click();
-					Thread.sleep(2000);
+					Thread.sleep(1000);
 					for (WebElement cell1 : timePickerLocators.minutes) { 
 						if (cell1.getText().equals((time_HR_MI[1]))) {
 							
-							Thread.sleep(2000);
+							Thread.sleep(1000);
 							cell1.click();
-							Thread.sleep(2000);
+							Thread.sleep(1000);
 
 							for (WebElement cell2 : timePickerLocators.ampm) {
 
@@ -44,10 +44,10 @@ public class TimePicker extends TestBase1 {
 
 									wait.until(ExpectedConditions.elementToBeClickable(cell2));
 									cell2.click();
-									Thread.sleep(2000);
+									Thread.sleep(1000);
 									try {
 										timePickerLocators.done.click();
-										Thread.sleep(2000);
+										Thread.sleep(1000);
 									} catch (Exception e) {
 										driver.findElement(By.xpath("/html/body/div[8]/button")).click();
 									}

@@ -47,6 +47,10 @@ public class CreateEventOrder {
 
 	@FindBy(how = How.XPATH, using = "//button[@id='btnBillServiceCancel']")
 	public WebElement close_after_finalize_button;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='items']/a/div")
+	public WebElement item;
+	
 
 	// ***************************food
 
@@ -63,7 +67,7 @@ public class CreateEventOrder {
 	public WebElement food_Close_button;
 
 	// ***************************alcohol
-	@FindBy(how = How.XPATH, using = "//td[contains(text(),'Liquor')]/parent::*/following-sibling::tr[1]//td[1]//label")
+	@FindBy(how = How.XPATH, using = "//*[@id='0_145_0']/td[1]/div/label")
 	public WebElement alcohol_label_chkbox;
 
 	@FindBy(how = How.XPATH, using = "//td[contains(text(),'Liquor')]/parent::*/following-sibling::tr[1]/td[3]//input")
@@ -77,7 +81,7 @@ public class CreateEventOrder {
 
 	// ************non-alcoholic-beverages
 
-	@FindBy(how = How.XPATH, using = "//tr[@id='0_13_0.59']//td[1]//label")
+	@FindBy(how = How.XPATH, using = "//*[@id='0_2_0.3']/td[1]/div/label")
 	public WebElement non_Alcoholic_Beverages_label_chkbox;
 
 	@FindBy(how = How.XPATH, using = "//input[@id='AddBeverageQty_13']")
@@ -155,19 +159,19 @@ public class CreateEventOrder {
 	@FindBy(how = How.XPATH, using = "//div[@class='list-group']//a[contains(text(),'Alcohol')]")
 	public WebElement alcohol;
 
-	@FindBy(how = How.XPATH, using = "//div[@class='list-group']//a[contains(text(),'Non-Alcoholic Beverages')]")
+	@FindBy(how = How.XPATH, using = "//*[@id='4']")
 	public WebElement non_alcoholic_beverages;
 
 	@FindBy(how = How.XPATH, using = "//div[@class='list-group']//a[contains(text(),'Rental Equipment')]")
 	public WebElement rental_equipment;
 
-	@FindBy(how = How.XPATH, using = "//div[@class='list-group']//a[contains(text(),'Event Equipment')]")
+	@FindBy(how = How.XPATH, using = "//*[@id='3']")
 	public WebElement event_equipment;
 
-	@FindBy(how = How.XPATH, using = "//div[@class='list-group']//a[contains(text(),' Disposables')]")
+	@FindBy(how = How.XPATH, using = "//*[@id='5']")
 	public WebElement disposables;
 
-	@FindBy(how = How.XPATH, using = "//div[@class='list-group']//a[contains(text(),' Staffing')]")
+	@FindBy(how = How.XPATH, using = "//*[@id='2']")
 	public WebElement staffing;
 
 	@FindBy(how = How.XPATH, using = "//span[@id='spOrderTotal']")
@@ -180,7 +184,7 @@ public class CreateEventOrder {
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Collection')]")
 	public WebElement collection_tab;
 
-	@FindBy(how = How.XPATH, using = "//span[@id='spncollpicon_1']")
+	@FindBy(how = How.XPATH, using = "//*[@id='spnCollName_5']")
 	public WebElement spncollpicon;
 
 	@FindBy(how = How.XPATH, using = "//tr[contains(@id,'_1')]//label[starts-with(@for,'CollItem')]")
@@ -232,10 +236,11 @@ public class CreateEventOrder {
 	public void add_food(String quantity) throws InterruptedException {
 
 		try {
-			new Actions(driver).moveToElement(food).click().build().perform();
-			Thread.sleep(4000);
+			driver.findElement(By.xpath("//*[@id='Basesearch']")).sendKeys("food");
+//			new Actions(driver).moveToElement(food).click().build().perform();
+			Thread.sleep(2000);
 			new Actions(driver).moveToElement(searchButton).click().build().perform();
-			Thread.sleep(4000);
+			Thread.sleep(2000);
 
 			food_label_chkbox.click();
 			new Select(AddMenuddlcourse_food_items_selectbox).selectByVisibleText("Buff");
@@ -245,7 +250,7 @@ public class CreateEventOrder {
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//table[@id='tbmenulist']/tbody//tr[@id='1']/td[5]/input")).sendKeys(quantity);
 			new Actions(driver).moveToElement(food_save_button).click().build().perform();
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -256,6 +261,8 @@ public class CreateEventOrder {
 	public void add_alcohol(String quantity) throws InterruptedException {
 
 		try {
+			item.click();
+			Thread.sleep(2000);
 			new Actions(driver).moveToElement(alcohol).click().build().perform();
 			Thread.sleep(4000);
 			new Actions(driver).moveToElement(searchButton).click().build().perform();
@@ -278,6 +285,8 @@ public class CreateEventOrder {
 	public void add_non_alcoholic_beverages(String quantity) throws InterruptedException {
 
 		try {
+			item.click();
+			Thread.sleep(2000);
 			new Actions(driver).moveToElement(non_alcoholic_beverages).click().build().perform();
 			Thread.sleep(4000);
 			new Actions(driver).moveToElement(searchButton).click().build().perform();
@@ -290,6 +299,7 @@ public class CreateEventOrder {
 			Thread.sleep(3000);
 			new Actions(driver).moveToElement(non_Alcoholic_Beverages_save_button).click().build().perform();
 			Thread.sleep(5000);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -299,6 +309,8 @@ public class CreateEventOrder {
 	public void add_rental_Equipment(String quantity) throws InterruptedException {
 
 		try {
+			item.click();
+			Thread.sleep(2000);
 			new Actions(driver).moveToElement(rental_equipment).click().build().perform();
 			Thread.sleep(4000);
 			new Actions(driver).moveToElement(searchButton).click().build().perform();
@@ -311,7 +323,7 @@ public class CreateEventOrder {
 			Rental_Equipment_qty.sendKeys(quantity);
 			Thread.sleep(3000);
 			new Actions(driver).moveToElement(Rental_Equipment_save_button).click().build().perform();
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -321,6 +333,8 @@ public class CreateEventOrder {
 	public void add_Event_Equipment(String quantity) throws InterruptedException {
 
 		try {
+			item.click();
+			Thread.sleep(2000);
 			new Actions(driver).moveToElement(event_equipment).click().build().perform();
 			Thread.sleep(4000);
 			new Actions(driver).moveToElement(searchButton).click().build().perform();
@@ -332,7 +346,7 @@ public class CreateEventOrder {
 					.sendKeys(quantity);
 			Thread.sleep(3000);
 			new Actions(driver).moveToElement(Event_Equipment_save_button).click().build().perform();
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -342,6 +356,8 @@ public class CreateEventOrder {
 	public void add_Disposables(String quantity) throws InterruptedException {
 
 		try {
+			item.click();
+			Thread.sleep(2000);
 			new Actions(driver).moveToElement(disposables).click().build().perform();
 			Thread.sleep(4000);
 			new Actions(driver).moveToElement(searchButton).click().build().perform();
@@ -363,11 +379,13 @@ public class CreateEventOrder {
 	public void add_Staffing(String quantity) throws InterruptedException {
 
 		try {
+			item.click();
+			Thread.sleep(2000);
 			new Actions(driver).moveToElement(staffing).click().build().perform();
 			Thread.sleep(4000);
 
-			new Select(staffing_Name_select_dropdown).selectByVisibleText("Porter");
-			// new Select(staffing_Name_select_dropdown).selectByIndex(1);
+//			new Select(staffing_Name_select_dropdown).selectByVisibleText("Porter");
+			 new Select(staffing_Name_select_dropdown).selectByIndex(1);
 
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//select[@id='AddPersonnelddlStaffName_1']//ancestor::tr//td[2]//input"))
@@ -383,10 +401,12 @@ public class CreateEventOrder {
 
 	public void add_collection() {
 		try {
+			item.click();
+		Thread.sleep(2000);
 			new Actions(driver).moveToElement(collection_tab).click().build().perform();
 			Thread.sleep(2000);
-			new Actions(driver).moveToElement(food).click().build().perform();
-			Thread.sleep(2000);
+//			new Actions(driver).moveToElement(food).click().build().perform();
+//			Thread.sleep(2000);
 			searchButton.click();
 			Thread.sleep(3000);
 			spncollpicon.click();
@@ -397,14 +417,14 @@ public class CreateEventOrder {
 			Thread.sleep(4000);
 			// ok or close in collections tab items label saved
 			driver.findElement(By.xpath("//button[@class='confirm btn btn-lg btn-success']")).click();
-			Thread.sleep(8000);
+			Thread.sleep(3000);
 
 			/*
 			 * collection_course_cancel_button.click(); btnpkgfinalize.click();
 			 */
 			// driver.findElement(By.xpath("//button[@class='button btn
 			// btn-warning service-btn-cancel pull-left']")).click();
-			Thread.sleep(8000);
+//			Thread.sleep(8000);
 
 			// close_after_finalize_button.click();
 			Thread.sleep(4000);
@@ -423,15 +443,16 @@ public class CreateEventOrder {
 			new Actions(driver).moveToElement(packagetab).click().build().perform();
 			Thread.sleep(2000);
 
-			new Actions(driver).moveToElement(food).click().build().perform();
-			Thread.sleep(2000);
+//			new Actions(driver).moveToElement(food).click().build().perform();
+//			Thread.sleep(2000);
 			searchButton.click();
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//form//tr[2]//td[1]//a[1]")).click();
 			Thread.sleep(3000);
-			
+			driver.findElement(By.xpath("//*[@id='txtPkgItemQuantity_3121']")).sendKeys("2");
+			Thread.sleep(1000);
 			button_package_save.click();
-			Thread.sleep(8000);
+			Thread.sleep(4000);
 			
 		}
 
@@ -455,11 +476,11 @@ public class CreateEventOrder {
 
 			searchButton.click();
 			Thread.sleep(4000);
-
 			driver.findElement(By.xpath("//form//tr[2]//td[1]//a[1]")).click();
-			Thread.sleep(8000);
+			Thread.sleep(4000);
+			driver.findElement(By.xpath("//*[@id=\"txtItemname_1_821\"]")).sendKeys("2");
 			combo_add_button.click();
-			Thread.sleep(6000);
+			Thread.sleep(4000);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -472,11 +493,12 @@ public class CreateEventOrder {
 
 		String beforefinalizetotal = driver.findElement(By.id("spOrderTotal")).getText();
 		System.out.println("text that before clicking finalize button in Event order   : " + beforefinalizetotal);
-	driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
+	    driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
 		Thread.sleep(2000);
 			driver.findElement(By.id("btnPkgFinalize")).click();
 		Thread.sleep(2000);			
-		driver.findElement(By.xpath("//button[@id='btnInfoSave']")).click();
+		driver.findElement(By.xpath("//*[@class='confirm btn btn-lg btn-primary']")).click();
+//		driver.findElement(By.xpath("//button[@id='btnInfoSave']")).click();
 		Thread.sleep(2000);
 		btnconfirm.click();
 
