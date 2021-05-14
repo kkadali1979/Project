@@ -2,6 +2,7 @@ package com.qa.cxplite.pages;
 
 import java.awt.Robot;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -159,6 +160,9 @@ public class CreateEventPage   {
 	
 	@FindBy(how=How.XPATH, using = "//table[@id='example']//tbody/tr[2]/td[2]")
 	public WebElement eventNumberAfterSearch;
+	
+	@FindBy(how=How.XPATH, using = "//*[@id='step_1']/div/div/div/div[2]/button")
+	public WebElement Event_Save_Button;
 
 	public  boolean createEventFromCustomer(String customerName, String Ae, String BeginDate, String BeginTime,
 			String EndDate, String EndTime, String EventType, String EventStatus, String EventName, String EventTheme,
@@ -219,7 +223,11 @@ public class CreateEventPage   {
 			guestCount.sendKeys(GuestCount);
 			firstNext.click();
 			secondnext.click();
+			Thread.sleep(2000);
 			createEvent.click();
+			Thread.sleep(2000);
+			Event_Save_Button.click();
+			Thread.sleep(2000);
 			
 
 //			new Select(county).selectByVisibleText(County);
@@ -231,7 +239,7 @@ public class CreateEventPage   {
 //			secondnext.click();
 //			Thread.sleep(2000);
 //			createEvent.click();
-			Thread.sleep(2000);
+//			Thread.sleep(2000);
 			
 			String eventDetails = eventNuber.getText();
 

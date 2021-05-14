@@ -51,6 +51,10 @@ public class CreateEventOrder {
 	@FindBy(how = How.XPATH, using = "//*[@id='items']/a/div")
 	public WebElement item;
 	
+	@FindBy(how = How.XPATH, using = "//*[@id='1']")
+	public WebElement menu;
+	
+	
 
 	// ***************************food
 
@@ -70,7 +74,7 @@ public class CreateEventOrder {
 	@FindBy(how = How.XPATH, using = "//*[@id='0_145_0']/td[1]/div/label")
 	public WebElement alcohol_label_chkbox;
 
-	@FindBy(how = How.XPATH, using = "//td[contains(text(),'Liquor')]/parent::*/following-sibling::tr[1]/td[3]//input")
+	@FindBy(how = How.XPATH, using = "//tr[2]//td[1]//div[1]//label[1]//ancestor::td/parent::tr//child::td[3]/input")
 	public WebElement alcohol_qty;
 
 	@FindBy(how = How.XPATH, using = "//button[@id='btnAddAlcoholSubmit']")
@@ -269,8 +273,8 @@ public class CreateEventOrder {
 			Thread.sleep(4000);
 			alcohol_label_chkbox.click();
 			Thread.sleep(2000);
-			driver.findElement(
-					By.xpath("//tr[2]//td[1]//div[1]//label[1]//ancestor::td/parent::tr//child::td[3]/input")).click();
+//			driver.findElement(
+//					By.xpath("//tr[2]//td[1]//div[1]//label[1]//ancestor::td/parent::tr//child::td[3]/input")).click();
 			alcohol_qty.sendKeys(quantity);
 			new Actions(driver).moveToElement(alcohol_save_button).click().build().perform();
 			// addmenusubmitbutton.click();
@@ -401,7 +405,7 @@ public class CreateEventOrder {
 
 	public void add_collection() {
 		try {
-			item.click();
+			menu.click();
 		Thread.sleep(2000);
 			new Actions(driver).moveToElement(collection_tab).click().build().perform();
 			Thread.sleep(2000);
@@ -427,7 +431,7 @@ public class CreateEventOrder {
 //			Thread.sleep(8000);
 
 			// close_after_finalize_button.click();
-			Thread.sleep(4000);
+//			Thread.sleep(4000);
 		}
 
 		catch (Exception e) {
@@ -440,6 +444,8 @@ public class CreateEventOrder {
 
 	public void add_package() {
 		try {
+			menu.click();
+			Thread.sleep(2000);
 			new Actions(driver).moveToElement(packagetab).click().build().perform();
 			Thread.sleep(2000);
 
@@ -478,7 +484,7 @@ public class CreateEventOrder {
 			Thread.sleep(4000);
 			driver.findElement(By.xpath("//form//tr[2]//td[1]//a[1]")).click();
 			Thread.sleep(4000);
-			driver.findElement(By.xpath("//*[@id=\"txtItemname_1_821\"]")).sendKeys("2");
+			driver.findElement(By.xpath("//*[@id='txtQuantity_1_821']")).sendKeys("2");
 			combo_add_button.click();
 			Thread.sleep(4000);
 
@@ -497,10 +503,13 @@ public class CreateEventOrder {
 		Thread.sleep(2000);
 			driver.findElement(By.id("btnPkgFinalize")).click();
 		Thread.sleep(2000);			
-		driver.findElement(By.xpath("//*[@class='confirm btn btn-lg btn-primary']")).click();
-//		driver.findElement(By.xpath("//button[@id='btnInfoSave']")).click();
+		driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 		Thread.sleep(2000);
-		btnconfirm.click();
+		driver.findElement(By.xpath("//*[@id='btnBillServiceCancel']")).click();
+//		driver.findElement(By.xpath("//*[@class='confirm btn btn-lg btn-primary']")).click();
+//		driver.findElement(By.xpath("//button[@id='btnInfoSave']")).click();
+//		Thread.sleep(2000);
+//		btnconfirm.click();
 
 	}
 

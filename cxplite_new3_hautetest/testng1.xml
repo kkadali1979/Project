@@ -19,6 +19,9 @@
 			<class name="com.qa.cxplite.tests.ValidateHomePageTest"></class>
 			<class name="com.qa.cxplite.tests.cxpCreateCustomerTest"></class>
 			<class name="com.qa.cxplite.tests.CreateEventTest"></class>
+			<class name="com.qa.cxplite.tests.CreateEventOrderTest"></class>
+			<class name="com.qa.cxplite.tests.createbillservicetest"></class>
+			
 		 	
 			
 		</classes>

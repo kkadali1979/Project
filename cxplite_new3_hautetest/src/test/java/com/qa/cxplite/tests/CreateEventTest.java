@@ -12,8 +12,6 @@ import com.qa.cxplite.utils.TestBase1;
 
 
 
-
-
 public class CreateEventTest extends TestBase1{
 	CreateEventPage createevenetpage;
 	cxplite_dataprovider cxplite_dataprovider ;

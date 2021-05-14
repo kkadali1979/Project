@@ -54,10 +54,6 @@ public class Create_billservice {
 	
 	
 	
-	
-	
-	
-	
 	public void makebill()
 	{
 		try {
