@@ -10,13 +10,14 @@
     <parameter name="browserName" value="chrome"/>
     <parameter name="userName" value="superadmin"/>
     <classes>
-      <class name="com.qa.cxplite.tests.CreateEventOrderTest">
+      <class name="com.qa.cxplite.tests.CreateEventTest">
         <methods>
+          <include name="validateeventpage"/>
           <include name="initialization"/>
-          <include name="add_menu" invocation-numbers="0"/>
-          <include name="eventordersetup"/>
+          <include name="validateCreateEvent" invocation-numbers="0"/>
+          <include name="serachEventTest" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.qa.cxplite.tests.CreateEventOrderTest -->
+      </class> <!-- com.qa.cxplite.tests.CreateEventTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [cxp lite Suite] -->
