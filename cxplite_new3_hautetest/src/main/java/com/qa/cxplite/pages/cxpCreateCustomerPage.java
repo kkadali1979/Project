@@ -1,5 +1,11 @@
 package com.qa.cxplite.pages;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,6 +16,9 @@ public class cxpCreateCustomerPage {
 	
 	
 	WebDriver driver;
+	public static String TESTDATA_SHEET_PATH = "C:\\Users\\mani\\Desktop\\Book1.xlsx";
+	static Workbook book;
+	static Sheet sheet;
 	 public cxpCreateCustomerPage(WebDriver driver){ 
         this.driver=driver; 
 }
@@ -146,8 +155,16 @@ public class cxpCreateCustomerPage {
 			Thread.sleep(2000);
 			CreateCustomerIcon.click();
 			Thread.sleep(2000);
+			String name=customerName+System.currentTimeMillis();
 			
-			CustomerName.sendKeys(customerName);
+			FileInputStream file = new FileInputStream(TESTDATA_SHEET_PATH);
+			book = WorkbookFactory.create(file);
+			book.getSheet("CreateEvent").createRow(1).createCell(0).setCellValue(name);
+			FileOutputStream fout = new FileOutputStream(TESTDATA_SHEET_PATH);
+			book.write(fout);
+			fout.close();
+			
+			CustomerName.sendKeys(name);
 			new Select(CustomerType).selectByVisibleText(customerType);
 			new Select(BillTerms).selectByVisibleText(billTerms);
 			new Select(BusinessUnit).selectByVisibleText(businessUnit);

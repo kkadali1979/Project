@@ -10,14 +10,13 @@
     <parameter name="browserName" value="chrome"/>
     <parameter name="userName" value="superadmin"/>
     <classes>
-      <class name="com.qa.cxplite.tests.CreateEventTest">
+      <class name="com.qa.cxplite.tests.cxpCreateCustomerTest">
         <methods>
-          <include name="validateeventpage"/>
           <include name="initialization"/>
-          <include name="validateCreateEvent" invocation-numbers="0"/>
-          <include name="serachEventTest" invocation-numbers="0"/>
+          <include name="validateCreateCustomer" invocation-numbers="0"/>
+          <include name="validatecreatecustomer"/>
         </methods>
-      </class> <!-- com.qa.cxplite.tests.CreateEventTest -->
+      </class> <!-- com.qa.cxplite.tests.cxpCreateCustomerTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [cxp lite Suite] -->
