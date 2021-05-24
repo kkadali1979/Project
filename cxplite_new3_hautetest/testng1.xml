@@ -6,7 +6,6 @@
 		<listener class-name="com.qa.cxplite.testnglisteneres.TestngListeners"></listener>
 	</listeners>
 
-
 	<test name="Test">
 		<parameter name="browserName" value="chrome"></parameter>
 		<parameter name="catererID" value="ridgewellscat"></parameter>
@@ -20,8 +19,9 @@
 			<class name="com.qa.cxplite.tests.cxpCreateCustomerTest"></class>
 			<class name="com.qa.cxplite.tests.CreateEventTest"></class>
 			<class name="com.qa.cxplite.tests.CreateEventOrderTest"></class>
-			<class name="com.qa.cxplite.tests.createbillservicetest"></class> 
-		
+			<class name="com.qa.cxplite.tests.CreateEstimateTest"></class>
+			<class name="com.qa.cxplite.tests.createbillservicetest"></class>
+			
 			
 		 	
 			

@@ -226,14 +226,14 @@ public class CreateEventPage   {
 			Thread.sleep(2000);
 			createEvent.click();
 			Thread.sleep(2000);
-//			Event_Save_Button.click();
+			Event_Save_Button.click();
 			Thread.sleep(2000);
 			
 
 //			new Select(county).selectByVisibleText(County);
 //			homePhone.sendKeys(Homephone);
 //
-//			email.clear();                   
+//			email.clear();
 //			email.sendKeys(Email);
 //            Thread.sleep(2000);
 //			secondnext.click();
