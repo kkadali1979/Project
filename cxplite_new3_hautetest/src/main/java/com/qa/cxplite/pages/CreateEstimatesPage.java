@@ -3,6 +3,7 @@ package com.qa.cxplite.pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -83,7 +84,7 @@ public class CreateEstimatesPage {
 	@FindBy(how = How.ID, using = "btnEstmateLiteSubmit")
 	public WebElement saveEstimates;
 
-	@FindBy(how = How.ID, using = "btnEstimateLiteCancel")
+	@FindBy(how = How.XPATH, using = "//*[@id='btnEstimateLiteCancel']")
 	public WebElement closeEstimates;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='float-pmenubtn']/span/i")
@@ -204,9 +205,14 @@ public class CreateEstimatesPage {
 			action.moveToElement(downArrow).build().perform();
 			AdditionalFee.click();
 
+			WebElement checkbox=driver.findElement(By.xpath("/html//table[@id='tblAdditinalFee']/tbody/tr[@role='row']//label"));
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", checkbox);
 
-			driver.findElement(By.xpath("//*[@id='squaredOne']")).click();
-			driver.findElement(By.xpath("//*[@id='btnAddlFeeSubmit']")).click();
+//			driver.findElement(By.xpath("/html//div[@id='tblAdditinalFee_wrapper']//div[@class='dataTables_scrollHead']//table[@role='grid']//tr[@role='row']/th[1]//label")).click();
+//			driver.findElement(By.xpath("//*[@id='btnAddlFeeSubmit']")).click();
+			Thread.sleep(2000);
+			executor.executeScript("document.getElementById('btnAddlFeeSubmit').click()");
 			Thread.sleep(2000);
 			action.moveToElement(downArrow).build().perform();
 			event_thirdparty_payee_button.click();
@@ -220,9 +226,10 @@ public class CreateEstimatesPage {
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//*[@id='btnTPPayeeSave']")).click();
 			EventThirdParty_Close.click();
-
-			wait.until(ExpectedConditions.elementToBeClickable(closeEstimates));
-			closeEstimates.click();
+			executor.executeScript("document.getElementById('btnEstimateLiteCancel').click()");
+			
+//			wait.until(ExpectedConditions.elementToBeClickable(closeEstimates));
+//			closeEstimates.click();
 			Thread.sleep(3000);
 
 			if (!ProposedRevenueTotal.equalsIgnoreCase("0.00"))
