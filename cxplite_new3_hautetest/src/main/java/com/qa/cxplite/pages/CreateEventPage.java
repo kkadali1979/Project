@@ -148,7 +148,7 @@ public class CreateEventPage   {
 	@FindBy(how = How.XPATH, using = "//*[@id='myModalSummary']//div[2]/div[1]/div/div/div")
 	public WebElement eventNuber;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='myModalSummary']//div[3]//div[1]/a")
+	@FindBy(how = How.XPATH, using = "//*[contains(text(),'Event Listing')]")
 	public WebElement eventListingButton;
 	
 	/*************Search Event*************/
@@ -223,10 +223,14 @@ public class CreateEventPage   {
 			guestCount.sendKeys(GuestCount);
 			firstNext.click();
 			secondnext.click();
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 			createEvent.click();
 			Thread.sleep(2000);
-			Event_Save_Button.click();
+//			WebElement popUp=driver.findElement(By.xpath("//*[@id='step_1']/div/div/div/div[2]/button"));			
+//			if(popUp.isDisplayed()) {
+//				popUp.click();
+//			}
+//			Event_Save_Button.click();
 			Thread.sleep(2000);
 			
 
