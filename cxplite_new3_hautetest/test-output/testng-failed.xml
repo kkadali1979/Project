@@ -10,13 +10,20 @@
     <parameter name="browserName" value="chrome"/>
     <parameter name="userName" value="superadmin"/>
     <classes>
-      <class name="com.qa.cxplite.tests.createbillservicetest">
+      <class name="com.qa.cxplite.tests.CreateEstimateTest">
         <methods>
-          <include name="bill_service"/>
+          <include name="validateCreateEstimates" invocation-numbers="0"/>
           <include name="initialization"/>
-          <include name="billservicesetup"/>
+          <include name="CreateEstimates"/>
         </methods>
-      </class> <!-- com.qa.cxplite.tests.createbillservicetest -->
+      </class> <!-- com.qa.cxplite.tests.CreateEstimateTest -->
+      <class name="com.qa.cxplite.tests.CreateEventOrderTest">
+        <methods>
+          <include name="initialization"/>
+          <include name="add_menu" invocation-numbers="0"/>
+          <include name="eventordersetup"/>
+        </methods>
+      </class> <!-- com.qa.cxplite.tests.CreateEventOrderTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [cxp lite Suite] -->
