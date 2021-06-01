@@ -501,7 +501,7 @@ public class CreateEventOrder {
 		System.out.println("text that before clicking finalize button in Event order   : " + beforefinalizetotal);
 	    driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
 		Thread.sleep(2000);
-			driver.findElement(By.id("btnPkgFinalize")).click();
+			driver.findElement(By.xpath("//*[@id='btnPkgFinalize']")).click();
 		Thread.sleep(2000);			
 		driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 		Thread.sleep(2000);

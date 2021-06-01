@@ -21,7 +21,7 @@ import io.appium.java_client.android.nativekey.KeyEvent;
 public class CreateEventPage   {
 	DatePicker datePicker;
 	TimePicker timePicker;
-	 cxplite_dataprovider cxpLiteDataProvider;
+	cxplite_dataprovider cxpLiteDataProvider;
 	int count = 0;
 
 	WebDriver driver;
@@ -106,8 +106,8 @@ public class CreateEventPage   {
 	@FindBy(how = How.ID, using = "GUESTCOUNT")
 	public WebElement guestCount;
 
-	
-	
+
+
 	@FindBy(how = How.ID, using = "Next1")
 	public WebElement firstNext;
 
@@ -150,24 +150,24 @@ public class CreateEventPage   {
 
 	@FindBy(how = How.XPATH, using = "//*[contains(text(),'Event Listing')]")
 	public WebElement eventListingButton;
-	
+
 	/*************Search Event*************/
 	@FindBy(how = How.ID, using = "baseeventid")
 	public WebElement eventSearch;
-	
+
 	@FindBy(how = How.ID, using = "btnManiSearch")
 	public WebElement eventSearchButton;
-	
+
 	@FindBy(how=How.XPATH, using = "//table[@id='example']//tbody/tr[2]/td[2]")
 	public WebElement eventNumberAfterSearch;
-	
+
 	@FindBy(how=How.XPATH, using = "//*[@id='step_1']/div/div/div/div[2]/button")
 	public WebElement Event_Save_Button;
 
 	public  boolean createEventFromCustomer(String customerName, String Ae, String BeginDate, String BeginTime,
 			String EndDate, String EndTime, String EventType, String EventStatus, String EventName, String EventTheme,
 			String BusinessUnit, String PlatterType, String GuestCount, String County, String Homephone, String Email)
-			throws InterruptedException
+					throws InterruptedException
 
 	{
 		boolean result = false;
@@ -192,12 +192,12 @@ public class CreateEventPage   {
 			Thread.sleep(2000);
 			beginTime.click();
 			Thread.sleep(4000);
-			
+
 			timePicker.pickTime(BeginTime);
-			
-			
+
+
 			//************************
-			
+
 			Thread.sleep(2000);
 			endDate.click();
 			Thread.sleep(1000);
@@ -205,9 +205,9 @@ public class CreateEventPage   {
 			Thread.sleep(1000);
 			endTime.click();
 			Thread.sleep(1000);
-			
+
 			timePicker.pickTime(EndTime);
-			
+
 			Thread.sleep(2000);
 			new Select(eventType).selectByVisibleText(EventType);
 			new Select(eventStatus).selectByVisibleText(EventStatus);
@@ -226,62 +226,60 @@ public class CreateEventPage   {
 			Thread.sleep(4000);
 			createEvent.click();
 			Thread.sleep(2000);
-//			WebElement popUp=driver.findElement(By.xpath("//*[@id='step_1']/div/div/div/div[2]/button"));			
-//			if(popUp.isDisplayed()) {
-//				popUp.click();
-//			}
-//			Event_Save_Button.click();
-			Thread.sleep(2000);
-			
 
-//			new Select(county).selectByVisibleText(County);
-//			homePhone.sendKeys(Homephone);
-//
-//			email.clear();
-//			email.sendKeys(Email);
-//            Thread.sleep(2000);
-//			secondnext.click();
-//			Thread.sleep(2000);
-//			createEvent.click();
-//			Thread.sleep(2000);
-			
+			//			Event_Save_Button.click();
+			//			Thread.sleep(2000);
+
+			//			new Select(county).selectByVisibleText(County);
+			//			homePhone.sendKeys(Homephone);
+			//
+			//			email.clear();
+			//			email.sendKeys(Email);
+			//            Thread.sleep(2000);
+			//			secondnext.click();
+			//			Thread.sleep(2000);
+			//			createEvent.click();
+			//			Thread.sleep(2000);
+
 			String eventDetails = eventNuber.getText();
 
 			result = eventNuber.isDisplayed();
 			String[] eventNumber = eventDetails.split(" ");
-			
+
 			System.out.println("Created Event Number is: " + eventNumber[1]);
-			
+
 			Thread.sleep(2000);
 			eventListingButton.click();
 			cxpLiteDataProvider.setDataEventNumber("EventNumber", count, 0, eventNumber[1]);
 
-		
+
 
 		} catch (Exception e) {
+			WebElement popUp=driver.findElement(By.xpath("//*[@id='step_1']/div/div/div/div[2]/button"));			
+			popUp.click();
 			e.printStackTrace();
 		}
 
 		return result;
 	}
 	// To search an Event from Event Listing screen
-		public boolean searchEvent(String eventNumber) throws Exception {
-			boolean result = false;
-			try {
-				Thread.sleep(2000);
-				eventSearch.clear();
-				Thread.sleep(2000);
-				eventSearch.sendKeys(eventNumber);
-				Thread.sleep(2000);
-				eventSearchButton.click();
-				Thread.sleep(2000);
-				String EventNumberAfterSearch = eventNumberAfterSearch.getText();
-				if (EventNumberAfterSearch.equals(eventNumber))
-					result = true;
+	public boolean searchEvent(String eventNumber) throws Exception {
+		boolean result = false;
+		try {
+			Thread.sleep(2000);
+			eventSearch.clear();
+			Thread.sleep(2000);
+			eventSearch.sendKeys(eventNumber);
+			Thread.sleep(2000);
+			eventSearchButton.click();
+			Thread.sleep(2000);
+			String EventNumberAfterSearch = eventNumberAfterSearch.getText();
+			if (EventNumberAfterSearch.equals(eventNumber))
+				result = true;
 
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			return result;
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+		return result;
+	}
 }

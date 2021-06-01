@@ -1,5 +1,13 @@
 package com.qa.cxplite.pages;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,6 +18,11 @@ public class cxpCreateCustomerPage {
 	
 	
 	WebDriver driver;
+	public static String TESTDATA_SHEET_PATH = System.getProperty("user.dir")+"\\src\\main\\java\\com\\qa\\cxplite\\testdata1\\cxpdatadata.xls";
+	static Workbook book;
+	static Sheet sheet;
+	FileInputStream file;
+	
 	 public cxpCreateCustomerPage(WebDriver driver){ 
         this.driver=driver; 
 }
@@ -147,7 +160,22 @@ public class cxpCreateCustomerPage {
 			CreateCustomerIcon.click();
 			Thread.sleep(2000);
 			
-			CustomerName.sendKeys(customerName);
+			Date data=new Date();
+			SimpleDateFormat s4=new SimpleDateFormat("HHmmss");
+			String curTime=s4.format(data);
+			String Customer="Customer."+curTime;
+			
+			file = new FileInputStream(TESTDATA_SHEET_PATH);
+			book = WorkbookFactory.create(file);
+			sheet = book.getSheet("CreateEvent");
+			book.getSheet("CreateEvent").getRow(1).getCell(0).setCellValue(Customer);
+			sheet = book.getSheet("CreateCustomer");
+			book.getSheet("CreateCustomer").getRow(1).getCell(0).setCellValue(Customer);
+			FileOutputStream fout = new FileOutputStream(TESTDATA_SHEET_PATH);
+			book.write(fout);
+			fout.close();
+			
+			CustomerName.sendKeys(Customer);
 			new Select(CustomerType).selectByVisibleText(customerType);
 			new Select(BillTerms).selectByVisibleText(billTerms);
 			new Select(BusinessUnit).selectByVisibleText(businessUnit);

@@ -32,7 +32,7 @@ public class Create_billservice {
 	static Workbook book;
 	static Sheet sheet;
 	FileInputStream file;
-	
+
 	public Create_billservice(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -124,75 +124,81 @@ public class Create_billservice {
 						driver.findElement(By.xpath("//a[contains(text(),'Accounting')]")).click();
 			 */
 
-			finalizebutton.click();
+			if(finalizebutton.isEnabled()==true)
+			{
+				finalizebutton.click();
 
-			Thread.sleep(4000);
+				Thread.sleep(4000);
 
-			System.out.println("After clicking finalize button grand total    :    "+grandtotal.getText());
-			Thread.sleep(2000);
-			cancelbutton.click();
+				System.out.println("After clicking finalize button grand total    :    "+grandtotal.getText());
+				Thread.sleep(2000);
+				cancelbutton.click();
+			}
+			else 
+			{
+				cancelbutton.click();
+				Knife_Fork_Button.click();
+				Thread.sleep(2000);
+				driver.switchTo().frame("right");
+				Accountling_Link.click();
 
-			Knife_Fork_Button.click();
-			Thread.sleep(2000);
-			driver.switchTo().frame("right");
-			Accountling_Link.click();
-
-			driver.switchTo().frame("header");
-			Filter_Link.click();
+				driver.switchTo().frame("header");
+				Filter_Link.click();
+				
 			// Store the current window handle
-			String winHandleBefore = driver.getWindowHandle();
-
-			// Perform the click operation that opens new window
+				String winHandleBefore = driver.getWindowHandle();
 
 			// Switch to new window opened
-			for(String winHandle : driver.getWindowHandles()){
-				driver.switchTo().window(winHandle);
+				for(String winHandle : driver.getWindowHandles())
+				{
+					driver.switchTo().window(winHandle);
+				}
+
+				// Perform the actions on new window
+				WebElement Event_id= driver.findElement(By.xpath("//*[@id='cisnumber']"));
+				Event_id.clear();
+				System.out.println(eventNumber);
+				Event_id.sendKeys(eventNumber);
+				driver.findElement(By.xpath("//*[@id='apply_label']")).click();
+
+				// Switch back to original browser (first window)
+				driver.switchTo().window(winHandleBefore);
+
+				// Continue with original browser (first window)
+				driver.switchTo().frame("right");
+				Actions action = new Actions(driver);
+				action.moveToElement(DHTML_Link).build().perform();
+				Event_Vendor_Bills.click();
+
+				driver.switchTo().frame("right");
+				Ready_Button.click();
+				driver.switchTo().alert().accept();
+				Thread.sleep(2000);
+				driver.switchTo().frame("header");
+				Home_Icon.click();
+				Thread.sleep(2000);
+				driver.switchTo().frame("right");
+				CaterXpert_Lite_Link.click();
+				driver.switchTo().defaultContent();
+				driver.findElement(By.xpath("//*[@id='baseeventid']")).sendKeys(eventNumber);
+				Search_Button.click();
+
 			}
+			} 
 
-			// Perform the actions on new window
-			WebElement Event_id= driver.findElement(By.xpath("//*[@id='cisnumber']"));
-			Event_id.clear();
-			System.out.println(eventNumber);
-			Event_id.sendKeys(eventNumber);
-			driver.findElement(By.xpath("//*[@id='apply_label']")).click();
-
-			// Switch back to original browser (first window)
-			driver.switchTo().window(winHandleBefore);
-
-			// Continue with original browser (first window)
-			driver.switchTo().frame("right");
-			Actions action = new Actions(driver);
-			action.moveToElement(DHTML_Link).build().perform();
-			Event_Vendor_Bills.click();
-
-			driver.switchTo().frame("right");
-			Ready_Button.click();
-			driver.switchTo().alert().accept();
-			Thread.sleep(2000);
-			driver.switchTo().frame("header");
-			Home_Icon.click();
-			Thread.sleep(2000);
-			driver.switchTo().frame("right");
-			CaterXpert_Lite_Link.click();
-			driver.switchTo().defaultContent();
-			driver.findElement(By.xpath("//*[@id='baseeventid']")).sendKeys(eventNumber);
-			Search_Button.click();
-
-		} 
-
-		catch (Exception e) {
-			e.printStackTrace();
+			catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
+
+
+
+
+
+
+
+
+
+
+
 	}
-
-
-
-
-
-
-
-
-
-
-
-}
