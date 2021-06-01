@@ -144,10 +144,11 @@ public class Create_billservice {
 				Thread.sleep(2000);
 				driver.switchTo().frame("right");
 				Accountling_Link.click();
+				Thread.sleep(2000);
 
 				driver.switchTo().frame("header");
 				Filter_Link.click();
-				
+				Thread.sleep(2000);
 			// Store the current window handle
 				String winHandleBefore = driver.getWindowHandle();
 
@@ -162,6 +163,7 @@ public class Create_billservice {
 				Event_id.clear();
 //				System.out.println(eventNumber);
 				Event_id.sendKeys(eventNumber);
+				Thread.sleep(2000);
 				driver.findElement(By.xpath("//*[@id='apply_label']")).click();
 
 				// Switch back to original browser (first window)
@@ -175,15 +177,18 @@ public class Create_billservice {
 
 				driver.switchTo().frame("right");
 				Ready_Button.click();
+				Thread.sleep(2000);
 				driver.switchTo().alert().accept();
 				Thread.sleep(2000);
 				driver.switchTo().frame("header");
 				Home_Icon.click();
 				Thread.sleep(2000);
 				driver.switchTo().frame("right");
+				Thread.sleep(2000);
 				CaterXpert_Lite_Link.click();
 				driver.switchTo().defaultContent();
 				driver.findElement(By.xpath("//*[@id='baseeventid']")).sendKeys(eventNumber);
+				Thread.sleep(2000);
 				Search_Button.click();
 
 			}

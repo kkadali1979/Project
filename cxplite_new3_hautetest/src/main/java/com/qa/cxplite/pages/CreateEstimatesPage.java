@@ -210,7 +210,9 @@ public class CreateEstimatesPage {
 			System.out.println(" propsed revenue Total    :   "+ProposedRevenueTotal);
 			Thread.sleep(3000);
 			action.moveToElement(downArrow).build().perform();
+			Thread.sleep(2000);
 			AdditionalFee.click();
+			Thread.sleep(2000);
 
 			WebElement checkbox=driver.findElement(By.xpath("/html//table[@id='tblAdditinalFee']/tbody/tr[@role='row']//label"));
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -222,13 +224,16 @@ public class CreateEstimatesPage {
 			executor.executeScript("document.getElementById('btnAddlFeeSubmit').click()");
 			Thread.sleep(2000);
 			action.moveToElement(downArrow).build().perform();
+			Thread.sleep(2000);
 			event_thirdparty_payee_button.click();
+			Thread.sleep(2000);
 			EventThirdParty_Add.click();
 			Thread.sleep(2000);
 			
 			WebElement dropDown= driver.findElement(By.xpath("//*[@id='PayeeId']"));
 			Select SelectDropDown= new Select(dropDown);
 			SelectDropDown.selectByVisibleText("Planner Sample 1");
+			Thread.sleep(2000);
 			EventThirdParty_Search.click();
 			Thread.sleep(2000);
 			EventThirdParty_Save.click();
