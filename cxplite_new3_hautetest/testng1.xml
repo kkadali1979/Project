@@ -22,6 +22,8 @@
 			<class name="com.qa.cxplite.tests.CreateEventOrderTest"></class>
 			<class name="com.qa.cxplite.tests.CreateEstimateTest"></class>
 			<class name="com.qa.cxplite.tests.createbillservicetest"></class>
+			<class name="com.qa.cxplite.tests.logout"></class>
+
 
 		</classes>
 	</test>

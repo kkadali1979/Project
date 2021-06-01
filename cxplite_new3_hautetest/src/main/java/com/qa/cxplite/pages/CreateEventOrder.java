@@ -235,6 +235,10 @@ public class CreateEventOrder {
 
 	@FindBy(how = How.XPATH, using = "//button[@id='btncombosave']")
 	public WebElement combo_add_button;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='btnBillServiceCancel']")
+	public WebElement EventOrder_close;
+	
 
 	// ******************food********************
 	public void add_food(String quantity) throws InterruptedException {
@@ -520,8 +524,8 @@ public class CreateEventOrder {
 		executor.executeScript("arguments[0].click();", finalize);
 		Thread.sleep(2000);			
 		driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id='btnBillServiceCancel']")).click();
+		Thread.sleep(2000); 
+		executor.executeScript("arguments[0].click();", EventOrder_close);
 //		driver.findElement(By.xpath("//*[@class='confirm btn btn-lg btn-primary']")).click();
 //		driver.findElement(By.xpath("//button[@id='btnInfoSave']")).click();
 //		Thread.sleep(2000);
