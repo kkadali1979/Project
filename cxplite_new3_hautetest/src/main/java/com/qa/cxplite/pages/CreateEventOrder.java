@@ -129,7 +129,7 @@ public class CreateEventOrder {
 
 	// **********************************Disposables
 
-	@FindBy(how = How.XPATH, using = "//tr[2]//td[1]//div[1]//label[1]")
+	@FindBy(how = How.XPATH, using = "//*[@id='0_126_0.07']/td[1]/div/label")
 	public WebElement Disposables_label_chkbox;
 
 	@FindBy(how = How.XPATH, using = "//input[@id='AddDisposableQty_1']")
@@ -470,6 +470,7 @@ public class CreateEventOrder {
 	public void add_combo() throws InterruptedException {
 		try {
 
+			
 			/*JavascriptExecutor js = (JavascriptExecutor) driver;
 			
 			js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');",
@@ -501,7 +502,9 @@ public class CreateEventOrder {
 		System.out.println("text that before clicking finalize button in Event order   : " + beforefinalizetotal);
 	    driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
 		Thread.sleep(2000);
-			driver.findElement(By.xpath("//*[@id='btnPkgFinalize']")).click();
+		WebElement finalize=driver.findElement(By.xpath("//*[@id='btnPkgFinalize']"));
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", finalize);
 		Thread.sleep(2000);			
 		driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
 		Thread.sleep(2000);

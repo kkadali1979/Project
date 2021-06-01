@@ -99,7 +99,13 @@ public class CreateEstimatesPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='btnAdd']")
 	public WebElement EventThirdParty_Add;
 	
-
+	@FindBy(how = How.XPATH, using = "//*[@id='btnTaskAdd']/i")
+	public WebElement EventThirdParty_Search;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='btnTPPayeeSave']")
+	public WebElement EventThirdParty_Save;
+	
+	
 	@FindBy(how = How.XPATH, using = "//*[@id='btnCancel']")
 	public WebElement EventThirdParty_Close;
 	
@@ -108,6 +114,7 @@ public class CreateEstimatesPage {
 			String disposables,String staffing) {
 		boolean result = false;
 		try {
+			
 			WebDriverWait wait = new WebDriverWait(driver, 30);
 			Actions action = new Actions(driver);
 			action.moveToElement(eventDhtml).build().perform();
@@ -222,10 +229,12 @@ public class CreateEstimatesPage {
 			WebElement dropDown= driver.findElement(By.xpath("//*[@id='PayeeId']"));
 			Select SelectDropDown= new Select(dropDown);
 			SelectDropDown.selectByVisibleText("Planner Sample 1");
-			driver.findElement(By.xpath("//*[@id='btnTaskAdd']/i")).click();
+			EventThirdParty_Search.click();
 			Thread.sleep(2000);
-			driver.findElement(By.xpath("//*[@id='btnTPPayeeSave']")).click();
-			EventThirdParty_Close.click();
+			EventThirdParty_Save.click();
+			Thread.sleep(2000);
+			executor.executeScript("arguments[0].click();", EventThirdParty_Close);
+			Thread.sleep(2000);
 			executor.executeScript("document.getElementById('btnEstimateLiteCancel').click()");
 			
 //			wait.until(ExpectedConditions.elementToBeClickable(closeEstimates));
