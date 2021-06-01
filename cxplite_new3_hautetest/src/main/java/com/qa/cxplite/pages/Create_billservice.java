@@ -157,7 +157,7 @@ public class Create_billservice {
 				// Perform the actions on new window
 				WebElement Event_id= driver.findElement(By.xpath("//*[@id='cisnumber']"));
 				Event_id.clear();
-				System.out.println(eventNumber);
+//				System.out.println(eventNumber);
 				Event_id.sendKeys(eventNumber);
 				driver.findElement(By.xpath("//*[@id='apply_label']")).click();
 
