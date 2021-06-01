@@ -265,7 +265,9 @@ public class CreateEventOrder {
 	public void add_alcohol(String quantity) throws InterruptedException {
 
 		try {
-			item.click();
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", item);
+			
 			Thread.sleep(2000);
 			new Actions(driver).moveToElement(alcohol).click().build().perform();
 			Thread.sleep(4000);
@@ -289,7 +291,9 @@ public class CreateEventOrder {
 	public void add_non_alcoholic_beverages(String quantity) throws InterruptedException {
 
 		try {
-			item.click();
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", item);
+			
 			Thread.sleep(2000);
 			new Actions(driver).moveToElement(non_alcoholic_beverages).click().build().perform();
 			Thread.sleep(4000);
@@ -313,7 +317,9 @@ public class CreateEventOrder {
 	public void add_rental_Equipment(String quantity) throws InterruptedException {
 
 		try {
-			item.click();
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", item);
+			
 			Thread.sleep(2000);
 			new Actions(driver).moveToElement(rental_equipment).click().build().perform();
 			Thread.sleep(4000);
@@ -337,7 +343,9 @@ public class CreateEventOrder {
 	public void add_Event_Equipment(String quantity) throws InterruptedException {
 
 		try {
-			item.click();
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", item);
+			
 			Thread.sleep(2000);
 			new Actions(driver).moveToElement(event_equipment).click().build().perform();
 			Thread.sleep(4000);
@@ -360,7 +368,9 @@ public class CreateEventOrder {
 	public void add_Disposables(String quantity) throws InterruptedException {
 
 		try {
-			item.click();
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", item);
+			
 			Thread.sleep(2000);
 			new Actions(driver).moveToElement(disposables).click().build().perform();
 			Thread.sleep(4000);
@@ -383,7 +393,9 @@ public class CreateEventOrder {
 	public void add_Staffing(String quantity) throws InterruptedException {
 
 		try {
-			item.click();
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", item);
+			
 			Thread.sleep(2000);
 			new Actions(driver).moveToElement(staffing).click().build().perform();
 			Thread.sleep(4000);
@@ -405,7 +417,9 @@ public class CreateEventOrder {
 
 	public void add_collection() {
 		try {
-			menu.click();
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", menu);
+			
 		Thread.sleep(2000);
 			new Actions(driver).moveToElement(collection_tab).click().build().perform();
 			Thread.sleep(2000);
@@ -444,7 +458,9 @@ public class CreateEventOrder {
 
 	public void add_package() {
 		try {
-			menu.click();
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", menu);
+			
 			Thread.sleep(2000);
 			new Actions(driver).moveToElement(packagetab).click().build().perform();
 			Thread.sleep(2000);
@@ -476,11 +492,8 @@ public class CreateEventOrder {
 			js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');",
 					combo_tab);*/
 			Thread.sleep(2000);
-
 			new Actions(driver).moveToElement(combo_tab).click().build().perform();
-
 			Thread.sleep(2000);
-
 			searchButton.click();
 			Thread.sleep(4000);
 			driver.findElement(By.xpath("//form//tr[2]//td[1]//a[1]")).click();

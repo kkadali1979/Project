@@ -63,8 +63,8 @@ public class CreateEstimatesPage {
 	@FindBy(how=How.XPATH, using = "//em[@class='fa fa-expand']")
 	public WebElement additional_fees_button;
 
-
-	@FindBy(how=How.XPATH, using = "//em[@class='fas fa-exchange-alt fa-rotate-90']")
+	
+	@FindBy(how=How.XPATH, using = "//*[@id='btnThirdPartyPayee']/em")
 	public WebElement event_thirdparty_payee_button;
 	//****************
 
@@ -226,8 +226,8 @@ public class CreateEstimatesPage {
 			action.moveToElement(downArrow).build().perform();
 			Thread.sleep(2000);
 			event_thirdparty_payee_button.click();
-			Thread.sleep(2000);
-			EventThirdParty_Add.click();
+			Thread.sleep(1000);
+			executor.executeScript("arguments[0].click();", EventThirdParty_Add);
 			Thread.sleep(2000);
 			
 			WebElement dropDown= driver.findElement(By.xpath("//*[@id='PayeeId']"));
