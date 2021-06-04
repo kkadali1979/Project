@@ -110,9 +110,10 @@ public class Create_billservice {
 			book = WorkbookFactory.create(file);
 			sheet = book.getSheet("EventNumber");
 			String eventNumber=sheet.getRow(1).getCell(0).toString();
-//			JavascriptExecutor executor = (JavascriptExecutor)driver;
-//			executor.executeScript("arguments[0].click();", billservicetab);
-			billservicetab.click();
+			
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", billservicetab);
+//			billservicetab.click();
 			Thread.sleep(2000);
 			generatebillbutton.click();
 			Thread.sleep(2000);

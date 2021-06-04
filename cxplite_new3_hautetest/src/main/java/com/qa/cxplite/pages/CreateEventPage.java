@@ -9,7 +9,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qa.cxplite.dataproviders.cxplite_dataprovider;
 
@@ -146,7 +148,7 @@ public class CreateEventPage   {
 	public WebElement createEvent;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='myModalSummary']//div[2]/div[1]/div/div/div")
-	public WebElement eventNuber;
+	public WebElement eventNumber;
 
 	@FindBy(how = How.XPATH, using = "//*[contains(text(),'Event Listing')]")
 	public WebElement eventListingButton;
@@ -222,8 +224,10 @@ public class CreateEventPage   {
 
 			guestCount.sendKeys(GuestCount);
 			firstNext.click();
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(secondnext));
 			secondnext.click();
 			Thread.sleep(4000);
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(createEvent));
 			createEvent.click();
 			Thread.sleep(2000);
 
@@ -241,9 +245,10 @@ public class CreateEventPage   {
 			//			createEvent.click();
 			//			Thread.sleep(2000);
 
-			String eventDetails = eventNuber.getText();
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(eventListingButton));
+			String eventDetails = eventNumber.getText();
 
-			result = eventNuber.isDisplayed();
+			result = eventNumber.isDisplayed();
 			String[] eventNumber = eventDetails.split(" ");
 
 			System.out.println("Created Event Number is: " + eventNumber[1]);
@@ -266,6 +271,7 @@ public class CreateEventPage   {
 	public boolean searchEvent(String eventNumber) throws Exception {
 		boolean result = false;
 		try {
+			
 			Thread.sleep(2000);
 			eventSearch.clear();
 			Thread.sleep(2000);

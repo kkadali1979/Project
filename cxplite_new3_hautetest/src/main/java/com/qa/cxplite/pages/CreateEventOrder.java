@@ -244,6 +244,7 @@ public class CreateEventOrder {
 	public void add_food(String quantity) throws InterruptedException {
 
 		try {
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Basesearch']")));
 			driver.findElement(By.xpath("//*[@id='Basesearch']")).sendKeys("food");
 //			new Actions(driver).moveToElement(food).click().build().perform();
 			Thread.sleep(2000);
@@ -269,6 +270,7 @@ public class CreateEventOrder {
 	public void add_alcohol(String quantity) throws InterruptedException {
 
 		try {
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(item));
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();", item);
 			
@@ -295,6 +297,7 @@ public class CreateEventOrder {
 	public void add_non_alcoholic_beverages(String quantity) throws InterruptedException {
 
 		try {
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(item));
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();", item);
 			
@@ -321,6 +324,7 @@ public class CreateEventOrder {
 	public void add_rental_Equipment(String quantity) throws InterruptedException {
 
 		try {
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(item));
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();", item);
 			
@@ -347,6 +351,7 @@ public class CreateEventOrder {
 	public void add_Event_Equipment(String quantity) throws InterruptedException {
 
 		try {
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(item));
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();", item);
 			
@@ -372,6 +377,7 @@ public class CreateEventOrder {
 	public void add_Disposables(String quantity) throws InterruptedException {
 
 		try {
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(item));
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();", item);
 			
@@ -397,13 +403,15 @@ public class CreateEventOrder {
 	public void add_Staffing(String quantity) throws InterruptedException {
 
 		try {
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(item));
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();", item);
 			
 			Thread.sleep(2000);
 			new Actions(driver).moveToElement(staffing).click().build().perform();
 			Thread.sleep(4000);
-
+			WebDriverWait wait=new WebDriverWait(driver,20);
+			wait.until(ExpectedConditions.visibilityOf(staffing_Name_select_dropdown));
 //			new Select(staffing_Name_select_dropdown).selectByVisibleText("Porter");
 			 new Select(staffing_Name_select_dropdown).selectByIndex(1);
 
@@ -421,6 +429,7 @@ public class CreateEventOrder {
 
 	public void add_collection() {
 		try {
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(menu));
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();", menu);
 			
@@ -462,6 +471,7 @@ public class CreateEventOrder {
 
 	public void add_package() {
 		try {
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(menu));
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();", menu);
 			
@@ -490,7 +500,7 @@ public class CreateEventOrder {
 	public void add_combo() throws InterruptedException {
 		try {
 
-			
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(combo_tab));
 			/*JavascriptExecutor js = (JavascriptExecutor) driver;
 			
 			js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');",

@@ -8,11 +8,14 @@ import java.util.Date;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class cxpCreateCustomerPage {
 	
@@ -154,12 +157,12 @@ public class cxpCreateCustomerPage {
 			throws Exception {
 		boolean result = false;
 		try {
-			
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(RightMenu));
 			RightMenu.click();
 			Thread.sleep(2000);
 			CreateCustomerIcon.click();
 			Thread.sleep(2000);
-			
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(CustomerName));
 			Date data=new Date();
 			SimpleDateFormat s4=new SimpleDateFormat("HHmmss");
 			String curTime=s4.format(data);
@@ -193,6 +196,7 @@ public class cxpCreateCustomerPage {
 			Comments.sendKeys(comments);
 			Directions.sendKeys(directions);
 			SecondNext.click();
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(SameAsAddress));
 			SameAsAddress.click();
 			//test purpose wait
 			Thread.sleep(5000);
@@ -213,7 +217,10 @@ public class cxpCreateCustomerPage {
 //			Thread.sleep(5000);
 			result = EditContact.isDisplayed();
 		
-			CloseButton.click();
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", CloseButton);
+//			CloseButton.click();
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(Homeicon));
 			Homeicon.click();
 			
 

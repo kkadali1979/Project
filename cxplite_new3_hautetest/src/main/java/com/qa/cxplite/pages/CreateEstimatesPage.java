@@ -109,7 +109,10 @@ public class CreateEstimatesPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='btnCancel']")
 	public WebElement EventThirdParty_Close;
 	
-
+	@FindBy(how = How.XPATH, using = "//div[@class='dataTables_scrollHeadInner']//label")
+	public WebElement All_CheckBoxes;
+	
+	
 	public boolean createEstimates(String combo,String food, String alcohol, String non_alcoholic_beverages, String rental_equipment, String event_equipment,
 			String disposables,String staffing) {
 		boolean result = false;
@@ -200,15 +203,15 @@ public class CreateEstimatesPage {
 			//				}
 			//			}
 			//			
-			//			
-			//			
-			driver.findElement(By.xpath("//div[@class='dataTables_scrollHeadInner']//label")).click();
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(All_CheckBoxes));			
+			All_CheckBoxes.click();
 			Thread.sleep(2000);
 			saveEstimates.click();
 			Thread.sleep(2000);
 			String ProposedRevenueTotal = proposedRevenueTotal.getText();
 			System.out.println(" propsed revenue Total    :   "+ProposedRevenueTotal);
 			Thread.sleep(3000);
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(downArrow));
 			action.moveToElement(downArrow).build().perform();
 			Thread.sleep(2000);
 			AdditionalFee.click();
