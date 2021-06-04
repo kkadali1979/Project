@@ -10,20 +10,35 @@
     <parameter name="browserName" value="chrome"/>
     <parameter name="userName" value="superadmin"/>
     <classes>
-      <class name="com.qa.cxplite.tests.CreateEstimateTest">
+      <class name="com.qa.cxplite.tests.CreateEventTest">
         <methods>
-          <include name="validateCreateEstimates" invocation-numbers="0"/>
+          <include name="validateeventpage"/>
           <include name="initialization"/>
-          <include name="CreateEstimates"/>
+          <include name="validateCreateEvent" invocation-numbers="0"/>
+          <include name="serachEventTest" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.qa.cxplite.tests.CreateEstimateTest -->
+      </class> <!-- com.qa.cxplite.tests.CreateEventTest -->
+      <class name="com.qa.cxplite.tests.ValidateHomePageTest">
+        <methods>
+          <include name="initialization"/>
+          <include name="validatehomepage"/>
+        </methods>
+      </class> <!-- com.qa.cxplite.tests.ValidateHomePageTest -->
       <class name="com.qa.cxplite.tests.CreateEventOrderTest">
         <methods>
           <include name="initialization"/>
           <include name="add_menu" invocation-numbers="0"/>
           <include name="eventordersetup"/>
+          <include name="eventnumberSearch" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.qa.cxplite.tests.CreateEventOrderTest -->
+      <class name="com.qa.cxplite.tests.cxpCreateCustomerTest">
+        <methods>
+          <include name="initialization"/>
+          <include name="validateCreateCustomer" invocation-numbers="0"/>
+          <include name="validatecreatecustomer"/>
+        </methods>
+      </class> <!-- com.qa.cxplite.tests.cxpCreateCustomerTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [cxp lite Suite] -->
